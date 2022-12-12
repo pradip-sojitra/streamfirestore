@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959640673986",
+    "project_id": "streamfirebase-845b5",
+    "storage_bucket": "streamfirebase-845b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959640673986:android:d79bb7c07722d64c0aa55b",
+        "android_client_info": {
+          "package_name": "com.example.streamfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959640673986-da97k25e15q82eclkkd8fjb4ffsvn92d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSJGWUDLDkhQHMBWP4HYVC5SiBffLahaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959640673986-da97k25e15q82eclkkd8fjb4ffsvn92d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
