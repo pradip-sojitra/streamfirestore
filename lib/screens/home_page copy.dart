@@ -39,7 +39,7 @@ class _HomePage1State extends State<HomePage1> {
         title: const Text('Home'),
         centerTitle: true,
         elevation: 0.0,
-        backgroundColor: Color(0xff4e416c),
+        backgroundColor: const Color(0xff4e416c),
       ),
       body: StreamBuilder<QuerySnapshot?>(
         stream: studentStream,
@@ -122,8 +122,8 @@ class _HomePage1State extends State<HomePage1> {
                                           bottomRight: Radius.circular(16.0),
                                           topRight: Radius.circular(16.0)),
                                   color: pradipId != null
-                                      ? Color(0xff4e416c)
-                                      : Color(0xffF6F7FB),
+                                      ? const Color(0xff4e416c)
+                                      : const Color(0xffF6F7FB),
                                 ),
                                 margin: const EdgeInsets.symmetric(
                                     vertical: 5, horizontal: 15),
@@ -166,7 +166,7 @@ class _HomePage1State extends State<HomePage1> {
                             contentPadding: const EdgeInsets.only(
                                 right: 15, left: 25, bottom: 15, top: 15),
                             filled: true,
-                            fillColor: Color(0xffF6F7FB),
+                            fillColor: const Color(0xffF6F7FB),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none),
@@ -204,7 +204,7 @@ class _HomePage1State extends State<HomePage1> {
                           }
                         },
                         child: CircleAvatar(
-                          backgroundColor: Color(0xff4e416c),
+                          backgroundColor: const Color(0xff4e416c),
                           radius: 27,
                           child: Container(
                             padding: const EdgeInsets.only(left: 5),

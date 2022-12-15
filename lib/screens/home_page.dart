@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Home'),
         centerTitle: true,
         elevation: 0.0,
-        backgroundColor: Color.fromARGB(255, 30, 150, 138),
+        backgroundColor: const Color.fromARGB(255, 30, 150, 138),
       ),
       body: StreamBuilder<QuerySnapshot?>(
         stream: studentStream,
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                           }
                         },
                         child: CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 30, 150, 138),
+                          backgroundColor: const Color.fromARGB(255, 30, 150, 138),
                           radius: 27,
                           child: Container(
                             padding: const EdgeInsets.only(left: 5),
