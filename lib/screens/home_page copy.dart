@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:intl/intl.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage1 extends StatefulWidget {
+  const HomePage1({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage1> createState() => _HomePage1State();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePage1State extends State<HomePage1> {
   final TextEditingController _chat = TextEditingController();
 
   Stream<QuerySnapshot>? studentStream =
@@ -29,15 +29,16 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Home'),
         centerTitle: true,
         elevation: 0.0,
-        backgroundColor: Color.fromARGB(255, 30, 150, 138),
+        backgroundColor: Color(0xff4e416c),
       ),
       body: StreamBuilder<QuerySnapshot?>(
         stream: studentStream,
@@ -96,84 +97,51 @@ class _HomePageState extends State<HomePage> {
                             foregroundColor: Colors.white,
                             icon: Icons.delete,
                           ),
-                          const SizedBox(width: 10),
                         ],
                       ),
                       child: Align(
-                        alignment: storeData[index]['pradipId'] != null
+                        alignment: pradipId != null
                             ? Alignment.topRight
                             : Alignment.topLeft,
                         child: Padding(
                           padding: pradipId != null
-                              ? const EdgeInsets.only(left: 60)
-                              : const EdgeInsets.only(right: 60),
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14.0),
-                            ),
-                            elevation: 1.0,
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 2.5, horizontal: 10),
-                            color: pradipId != null
-                                ? Colors.green.shade100
-                                : Colors.white,
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 8, vertical: 4),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    ruchitId != null
-                                        ? 'Ruchit'
-                                        : harshId != null
-                                            ? 'Harsh'
-                                            : 'Pradip',
+                              ? const EdgeInsets.only(left: 50)
+                              : const EdgeInsets.only(right: 50),
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: pradipId != null
+                                      ? const BorderRadius.only(
+                                          bottomLeft: Radius.circular(16.0),
+                                          bottomRight: Radius.circular(16.0),
+                                          topLeft: Radius.circular(16.0))
+                                      : const BorderRadius.only(
+                                          bottomLeft: Radius.circular(16.0),
+                                          bottomRight: Radius.circular(16.0),
+                                          topRight: Radius.circular(16.0)),
+                                  color: pradipId != null
+                                      ? Color(0xff4e416c)
+                                      : Color(0xffF6F7FB),
+                                ),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 5, horizontal: 15),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 14, vertical: 22),
+                                  child: Text(
+                                    storeData[index]['text'],
                                     style: TextStyle(
                                         fontSize: 12.0,
-                                        color: ruchitId != null
-                                            ? Colors.red
-                                            : harshId != null
-                                                ? Colors.green
-                                                : Colors.blue,
-                                        fontWeight: FontWeight.bold),
+                                        letterSpacing: 0.2,
+                                        color: pradipId != null
+                                            ? Colors.white
+                                            : Colors.black),
                                   ),
-                                  Wrap(
-                                    alignment: WrapAlignment.end,
-                                    children: [
-                                      Text(
-                                        storeData[index]['text'],
-                                        style: const TextStyle(
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                            letterSpacing: 0.2,
-                                            color: Colors.black),
-                                      ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        children: [
-                                          const SizedBox(height: 10),
-                                          Text(
-                                            (storeData[index]["pradipId"] !=
-                                                    null)
-                                                ? storeData[index]["time"]
-                                                    .toString()
-                                                : storeData[index]["time"]
-                                                    .toString(),
-                                            style: const TextStyle(
-                                                fontSize: 11.0,
-                                                color: Colors.grey,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  )
-                                ],
+                                ),
                               ),
-                            ),
+
+                            ],
                           ),
                         ),
                       ),
@@ -193,11 +161,11 @@ class _HomePageState extends State<HomePage> {
                           maxLines: 3,
                           controller: _chat,
                           decoration: InputDecoration(
-                            hintText: 'Message',
+                            hintText: 'Type a message',
                             contentPadding: const EdgeInsets.only(
                                 right: 15, left: 25, bottom: 15, top: 15),
                             filled: true,
-                            fillColor: Colors.white,
+                            fillColor: Color(0xffF6F7FB),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(50),
                                 borderSide: BorderSide.none),
@@ -235,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                           }
                         },
                         child: CircleAvatar(
-                          backgroundColor: Color.fromARGB(255, 30, 150, 138),
+                          backgroundColor: Color(0xff4e416c),
                           radius: 27,
                           child: Container(
                             padding: const EdgeInsets.only(left: 5),
